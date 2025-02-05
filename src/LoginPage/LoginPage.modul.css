@@ -1,0 +1,145 @@
+.page{
+  position:absolute;
+  top: 50%;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  padding : 0 20px;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+/* 
+  background-color: #f7f7f7; */
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  flex-direction: column;
+}
+
+
+.contentWrap{
+  margin-top:26px;
+  flex: 1 0 1;
+} 
+.inputTitle{
+  font-size: 14px;
+  font-weight: 600;
+  color: #8D8BA7;
+}
+
+.inputWrap{
+  display:flex;
+  border-radius: 8px;
+  
+  width: 100%;
+  max-width: 374px; 
+  padding: 16px;
+  margin-top:8px;
+  background-color: #F9F9FF;
+  border: 1px solid #e2e0e0;
+
+}
+.inputWrap:focus-within{
+  border: 1px solid #e854cc;
+}
+
+.input{
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 17px;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #F9F9FF;
+}
+
+.input::placeholder{
+  color: #8D8BA7;
+}
+
+.errorMessageWrap{
+  margin-top: 8px;
+  color: #ef0000;
+  font-size: 12px;
+}
+
+.buttonWrap{
+  background-color: #5b4a83; 
+  color: white;
+  width: 100%;
+  max-width: 374px; 
+  height: 51px; 
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.bottomButton {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.bottomButton:disabled{
+  background-color: #dadada;
+  color: white;
+}
+
+hr{
+  background-color: #dadada;
+  margin-top: 16px;
+  border: none;
+  height: 0.3px;
+  width: 100%;
+}
+.registerWrap{
+  background-color: #5b4a83; 
+  color: white;
+  width: 100%;
+  max-width: 374px; 
+  height: 51px; 
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.registerTitle{
+  font-size: 14px;
+  font-weight: 400;
+  color: #919191;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  font-weight: 800;
+  color: #e854cc;
+  cursor: pointer;
+}
+
+/* .loginImage{
+  display: block;
+  width:115px;
+  height: 50px;
+  margin: 0 auto;
+}
+.registerImage{
+  display: block;
+  margin: 0 auto;
+  width: 135px;
+  height: 50px;
+} */
