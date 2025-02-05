@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 30px 0px;
     width: 100%;
+    background-color: white;
 `;
 
 const LoginButton = styled.div`
