@@ -60,32 +60,39 @@ $ npm start
 
 ## 5.1 Language
 
-| HTML5 | ![HTML5](https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31) |
-| CSS3 | ![CSS3](https://github.com/user-attachments/assets/c531b03d-55a3-40bf-9195-9ff8c4688f13) |
-| Javascript | ![Javascript](https://github.com/user-attachments/assets/4a7d7074-8c71-48b4-8652-7431477669d1) |
+ <span><img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></span>
+<span><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"></span>
+<span><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> </span>
+<br/>
+<span><img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"></span>
 
   
  
 
 ## 5.2 Frotend
+<span><img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"></span>
+<span><img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"></span>
 
-| React | ![React](https://github.com/user-attachments/assets/e3b49dbb-981b-4804-acf9-012c854a2fd2) | 18.3.1 |
-| StyledComponents | ![StyledComponents](https://github.com/user-attachments/assets/c9b26078-5d79-40cc-b120-69d9b3882786) | 6.1.12 |
+
+
 
   
  
 
 ## 5.3 Backend
+<span><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"></span>
+<span><img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"></span>
+<span><img src="https://img.shields.io/badge/amazonwebservices-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white"></span>
+
+
 
 
   
- 
-
 ## 5.4 Cooperation
+<span><img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"></span>
+<span><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"></span>
 
-| Git | ![git](https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6) |
-| Git Kraken | ![git kraken](https://github.com/user-attachments/assets/32c615cb-7bc0-45cd-91ea-0d1450bfc8a9) |
-| Notion | ![Notion](https://www.notion.so/18702d0238c981e1b6adc76bacb90094) |
+
 
   
  
@@ -102,7 +109,7 @@ $ npm start
 
 ## 브랜치 전략 (Branch Strategy)
 
-우리의 브랜치 전략은 Git Flow를 기반으로 하며, 다음과 같은 브랜치를 사용합니다.
+우리의 브랜치 전략은 ``를 기반으로 하며, 다음과 같은 브랜치를 사용합니다.
 
 Main Branch
 
