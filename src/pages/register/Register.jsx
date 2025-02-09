@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const Title = styled.span`
     font-size: 36px;
     font-weight: bold;
-    text-shadow: 0px 2px 5px #8D8BA7;
+    //text-shadow: 0px 2px 5px #8D8BA7;
     color: #5D5A88;
 `;
 
@@ -24,7 +24,7 @@ const Label = styled.label`
     font-size: 14px;
     margin-top: 20px;
     color: #8D8BA7;
-    text-shadow: 0px 1px 10px #a9a7c5;
+    //text-shadow: 0px 1px 10px #a9a7c5;
 `;
 
 const Input = styled.input`
@@ -33,7 +33,7 @@ const Input = styled.input`
     font-size: 16px;
     background-color: #F9F9FF;
     color: #5D5A88;
-    box-shadow: 0px 3px 5px rgb(179, 177, 205);
+    //box-shadow: 0px 3px 5px rgb(179, 177, 205);
     border: none;
     border-radius: 10px;
     transition: background-color 0.3s ease, opacity 0.3s ease;  // 애니메이션 효과 추가
