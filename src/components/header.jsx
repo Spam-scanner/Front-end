@@ -13,8 +13,8 @@ const Wrapper = styled.div`
 `;
 
 const LoginButton = styled.div`
-    color: ${(props) => props.isLogin ? "white" : "#5D5A88"};
-    background-color: ${(props) => props.isLogin ? "#5D5A88" : "white"};
+    color: ${(props) => props.$isLogin ? "white" : "#5D5A88"};
+    background-color: ${(props) => props.$isLogin ? "#5D5A88" : "white"};
     font-size: 14px;
     border: 1px solid #D4D2E3;
     border-radius: 30px;
@@ -29,8 +29,8 @@ const LoginButton = styled.div`
 `;
 
 function Header(props) {
-    const { fontSize } = props; // 헤더에 props로 헤더의 로고 크기를 조절(각 페이지마다 전달해주는 값을 다르게게)
-    const [isLogin, setIsLogin] = useState(true); // 테스트용 true, 기본은 false로 설정 
+    const { fontSize } = props; // 헤더에 props로 헤더의 로고 크기를 조절(각 페이지마다 전달해주는 값을 다르게)
+    const [isLogin, setIsLogin] = useState(false); // 기본 false로 설정(로그아웃 상태) 
     const navigate = useNavigate();
 
     const onClick = () => {
@@ -51,7 +51,7 @@ function Header(props) {
     return (
         <Wrapper>
             <Logo fontSize={fontSize} />
-            <LoginButton onClick={onClick} isLogin={isLogin}>
+            <LoginButton onClick={onClick} $isLogin={isLogin}>
                 {isLogin ? "로그아웃" : "로그인"}
             </LoginButton>
         </Wrapper>
