@@ -24,7 +24,7 @@ $ npm start
 # 2\. Team Members (팀원 및 팀 소개)
 
 [ FE ]
-| [윤예진](https://github.com/nyun-nye) | 구혁모 | 박성훈 |
+| [윤예진](https://github.com/nyun-nye) | 구혁모(https://github.com/orgs/Spam-scanner/people/9hkmo) | 박성훈 |
 | --- | --- | --- |
 | <img src="https://github.com/user-attachments/assets/35d07b02-ab62-4b5c-9d43-50a21e8fe11b" /> |  |  |
 
