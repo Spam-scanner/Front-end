@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     gap: 50%;
     padding: 30px 0px;
     bottom: 0px;
+    background-color: white;
 `;
 
 const Text = styled.span`
