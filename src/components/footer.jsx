@@ -1,15 +1,20 @@
 import styled from "styled-components";
-import Logo from "./logo";
+import Logo from "./Logo";
 
 const Wrapper = styled.div`
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 30px 30px;
     width: 100%;
-    gap: 50%;
-    padding: 30px 0px;
     bottom: 0px;
-    background-color: white;
+    // 반응형 스타일 추가
+    @media (max-width: 768px) {
+        flex-direction: column; 
+        text-align: center;       
+        gap: 10px;                
+    }
 `;
 
 const Text = styled.span`

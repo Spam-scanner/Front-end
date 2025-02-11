@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Logo from "./logo";
+import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -9,27 +9,28 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 30px 0px;
     width: 100%;
-    background-color: white;
+    gap: 20px;
 `;
 
 const LoginButton = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 100px;
-    color: ${(props) => props.isLogin ? "white" : "#5D5A88"};
-    background-color: ${(props) => props.isLogin ? "#5D5A88" : "white"};
+    color: ${(props) => props.$isLogin ? "white" : "#5D5A88"};
+    background-color: ${(props) => props.$isLogin ? "#5D5A88" : "white"};
     font-size: 14px;
     border: 1px solid #D4D2E3;
     border-radius: 30px;
-    margin: 0;
-    padding: 10px 20px;
+    padding: 15px 20px;
     cursor: pointer;
+
+    // 반응형 스타일 추가
+    @media (min-width: 768px) {
+        position: absolute;
+        right: 100px;
+    }
 `;
 
 function Header(props) {
-    const [isLogin, setIsLogin] = useState(true); // 테스트용 true, 기본은 false로 설정 
+    const { fontSize } = props; // 헤더에 props로 헤더의 로고 크기를 조절(각 페이지마다 전달해주는 값을 다르게)
+    const [isLogin, setIsLogin] = useState(false); // 기본 false로 설정(로그아웃 상태) 
     const navigate = useNavigate();
 
     const onClick = () => {
@@ -49,10 +50,10 @@ function Header(props) {
 
     return (
         <Wrapper>
-            <Logo fontSize="30px" />
-            <LoginButton onClick={onClick} isLogin={isLogin}>
+            <Logo fontSize={fontSize} />
+            <LoginButton onClick={onClick} $isLogin={isLogin}>
                 {isLogin ? "로그아웃" : "로그인"}
-                </LoginButton>
+            </LoginButton>
         </Wrapper>
     );
 }
