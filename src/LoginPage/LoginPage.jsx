@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import Footer from '../components/footer';
+import Header from '../components/header';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,19 +10,18 @@ const Wrapper = styled.div`
   margin-top: 100px;
 `;
 const Title = styled.h2`
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   color: #5b4a83; /* 보라색 */
   margin-bottom: 20px;
   text-align: center;
-  text-shadow: 2px 2px 5px rgba(91, 74, 131, 0.5);
-`;
+  `;
 
 
 const InputField = styled.div`
   width: 100%;
-  max-width: 374px;
-  display: flex; /* Flex 적용 */
+  max-width: 350px;
+  display: flex; 
   align-items: center; /* 가운데 정렬 */
   margin-bottom: 16px;
 
@@ -42,7 +42,7 @@ const InputField = styled.div`
 
 const Button = styled.button`
   width: 100%;
-  max-width: 374px;
+  max-width: 350px;
   height: 51px;
   border: ${({ primary }) => (primary ? "none" : "1px solid #5b4a83")};
   background-color: ${({ primary }) => (primary ? "#5b4a83" : "#FFFFFF")};
@@ -67,8 +67,8 @@ const Button = styled.button`
 `;
 
 const StyledLink = styled(Link)`
-  width: 100%;  /* 너비 조정 */
-  max-width: 374px;
+  width: 100%;  
+  max-width: 350px;
 `;
 
 
@@ -104,6 +104,7 @@ function LoginPage() {
 
   return (
     <Wrapper>
+      <Header/>
       <Title> 로그인 </Title>
       <InputField>
         <input type="text" placeholder="아이디를 입력해주세요." value={id} onChange={handleId} />
@@ -118,7 +119,10 @@ function LoginPage() {
        <StyledLink to="/register">
         <Button>회원가입</Button>
       </StyledLink>
+      <Footer/>
+
     </Wrapper>
+    
   );
 }
 

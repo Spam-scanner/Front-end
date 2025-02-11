@@ -6,10 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import LoginPage from './LoginPage/LoginPage';
-import Footer from './components/footer';
-import Header from './components/header';
-import Logo from './components/logo';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
+import Footer from "../components/footer";
+import Header from "../components/header";
 const Title = styled.h2`
   font-size: 30px;
   font-weight: bold;
@@ -80,6 +81,7 @@ function Register() {
 
   return (
     <Wrapper>
+      <Header/>
       <Title> 회원가입</Title>
      <InputField>
         <input type="text" placeholder="아이디를 입력해주세요." value={id} onChange={handleId} />
@@ -92,6 +94,8 @@ function Register() {
       <Text>
         계정이 있으신가요? <Link to="/" style={{ fontWeight: "bold", color: "#e854cc" }}>로그인하기</Link>
       </Text>
+      <Footer/>
+
     </Wrapper>
   );
 }
