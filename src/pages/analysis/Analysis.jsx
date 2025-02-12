@@ -31,11 +31,11 @@ const Text = styled.span`
 
 const TextArea = styled.textarea`
     box-sizing: border-box;
+    display: flex;
     font-size: 14px;
     font-family: 'Pretendard-Regular';
     color: #5D5A88;
     background-color: white;
-    display: flex;
     width: 100%;
     padding: 20px;
     border: none;
@@ -44,7 +44,6 @@ const TextArea = styled.textarea`
     &::placeholder {
         color: #ADABC3;
     }
-    
     &:focus {
         outline: 0.5px solid #bbbac9;
     }
@@ -56,32 +55,18 @@ const InputField = styled.div`
 
 const Input = styled.input`
     padding: 16px 20px;
-    font-size: 16px;
-    background-color: #F9F9FF;
-    color: #5D5A88;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, opacity 0.3s ease;  // 애니메이션 효과 추가
+    font-size: 14px;
+    font-weight: 900;
+    background-color: #5D5A88;
+    color: white;
+    border: 1px solid #5D5A88;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 
-    &:focus {
-        outline: 0.5px solid hsl(243.75, 32.00000000000001%, 90.19607843137256%);
-        background-color: #f5f5fe;
-    }
-    &::placeholder {
-        opacity: 60%;
-    }
-    &[type="submit"] {
-        font-size: 14px;
-        font-weight: 900;
-        background-color: #5D5A88;
-        color: white;
-        border: 1px solid #5D5A88;
-        border-radius: 50px;
-        margin-top: 20px;
-        cursor: pointer;
-        &:hover {
-            opacity: 0.8;
-        }
+    &:hover {
+        opacity: 0.8;
     }
 `;
 
@@ -126,29 +111,29 @@ function Analysis(props) {
 
     return (
         <>
-        {isLoading ? <Loading /> : 
-         <Wrapper>
-            <Text fontSize="35px" color="#5D5A88">스팸 분석기</Text>
-            <Form onSubmit={handleSubmit(onSubmit, onInvalid)}>
-                <Text fontSize="16px" color="#5D5A88">이 메시지도 스팸일까요?</Text>
-                <InputField>
-                    <TextArea rows={15} maxLength={1000} placeholder="수신한 텍스트를 입력해주세요."
-                        {...register("inputText", {
-                            required: "필수 입력 사항입니다.",
-                            maxLength: {
-                                value: 1000,
-                                message: "1000자 이하로 입력해주세요."
-                            },
-                        })}
-                    />
-                    {errors.inputText && <Error>{errors.inputText.message}</Error>}
-                </InputField>
-                <Input type="submit" value={"제출하기"} />
-            </Form>
-        </Wrapper> 
-        }
+            {isLoading ? <Loading /> :
+                <Wrapper>
+                    <Text fontSize="35px" color="#5D5A88">스팸 분석기</Text>
+                    <Form onSubmit={handleSubmit(onSubmit, onInvalid)}>
+                        <Text fontSize="16px" color="#5D5A88">이 메시지도 스팸일까요?</Text>
+                        <InputField>
+                            <TextArea rows={15} maxLength={1000} placeholder="수신한 텍스트를 입력해주세요."
+                                {...register("inputText", {
+                                    required: "필수 입력 사항입니다.",
+                                    maxLength: {
+                                        value: 1000,
+                                        message: "1000자 이하로 입력해주세요."
+                                    },
+                                })}
+                            />
+                            {errors.inputText && <Error>{errors.inputText.message}</Error>}
+                        </InputField>
+                        <Input type="submit" value={"제출하기"} />
+                    </Form>
+                </Wrapper>
+            }
         </>
-       
+
     );
 }
 
