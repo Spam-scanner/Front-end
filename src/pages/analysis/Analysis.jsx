@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
+import Loading from "./Loading";
 
 const Wrapper = styled.div`
     display: flex;
@@ -91,6 +93,7 @@ const Error = styled.span`
 `;
 
 function Analysis(props) {
+    const [isLoading, setIsLoading] = useState(false);
     const {
         register,
         handleSubmit,
@@ -100,24 +103,36 @@ function Analysis(props) {
         mode: "onChange"
     });
 
-    const onSubmit = (data) => {
+    // handleSubmit에서 유효성 검사 성공 시
+    const onSubmit = async (data) => {
+        setIsLoading(true);
         try {
             console.log(data);
+            await new Promise((resolve) => setTimeout(resolve, 2000)); // 2초간 로딩 시간 테스트, 통신할 때 변경하기?
 
             // 제출하면 폼 리셋
-            reset(); 
+            reset();
         } catch (error) {
             console.log(error);
+        } finally {
+            setIsLoading(false);
         }
     }
 
+    // handleSubmit에서 유효성 검사 실패 시
+    const onInvalid = (errors) => {
+        console.log(errors);
+    }
+
     return (
-        <Wrapper>
+        <>
+        {isLoading ? <Loading /> : 
+         <Wrapper>
             <Text fontSize="35px" color="#5D5A88">스팸 분석기</Text>
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit, onInvalid)}>
                 <Text fontSize="16px" color="#5D5A88">이 메시지도 스팸일까요?</Text>
                 <InputField>
-                    <TextArea rows={15} maxLength={10002} placeholder="수신한 텍스트를 입력해주세요."
+                    <TextArea rows={15} maxLength={1000} placeholder="수신한 텍스트를 입력해주세요."
                         {...register("inputText", {
                             required: "필수 입력 사항입니다.",
                             maxLength: {
@@ -130,7 +145,10 @@ function Analysis(props) {
                 </InputField>
                 <Input type="submit" value={"제출하기"} />
             </Form>
-        </Wrapper>
+        </Wrapper> 
+        }
+        </>
+       
     );
 }
 
