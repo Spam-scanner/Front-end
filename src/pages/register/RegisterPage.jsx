@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 import Register from "./Register";
 import AuthBackground from "../../assets/auth-background.svg"
 
