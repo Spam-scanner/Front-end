@@ -93,7 +93,7 @@ function Analysis(props) {
         setIsLoading(true);
         try {
             console.log(data);
-            await new Promise((resolve) => setTimeout(resolve, 2000)); // 2초간 로딩 시간 테스트, 통신할 때 변경하기?
+            await new Promise((resolve) => setTimeout(resolve, 5000)); // 5초간 로딩 시간 테스트, 통신할 때 변경하기?
 
             // 제출하면 폼 리셋
             reset();

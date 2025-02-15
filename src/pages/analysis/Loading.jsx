@@ -1,13 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import lock from "../../assets/icon-lock.svg"
+
+const pulse = keyframes`
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+`;
 
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 105px;
-    width: fit-content;
 `;
 
 const Circle = styled.div`
@@ -21,6 +31,8 @@ const Circle = styled.div`
     background-color: #F2F1FA;
     width: 300px;
     height: 300px;
+
+    animation: ${pulse} 2s infinite ease-in-out;
 `;
 
 const Img = styled.img`
@@ -38,7 +50,7 @@ function Loading(props) {
         <Wrapper>
             <Text fontSize="35px" color="#5D5A88">메시지를 분석중이에요!</Text>
             <Circle>
-                <Img fontSize="100px" src={lock}/>
+                <Img fontSize="100px" src={lock} />
                 <Text fontSize="18px" color="#5D5A88">잠시만 기다려주세요.</Text>
             </Circle>
         </Wrapper>
