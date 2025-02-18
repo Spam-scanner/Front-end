@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Analysis from "./Analysis";
-import Header from "../../components/HeaderTemp";
-import Footer from "../../components/FooterTemp";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Wrapper = styled.div`
     display: flex;

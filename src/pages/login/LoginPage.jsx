@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Footer from "../components/FooterTemp";
-import Header from "../components/HeaderTemp";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import Login from "./Login";
-import AuthBackground from "../assets/auth-background.svg"
+import AuthBackground from "../../assets/auth-background.svg"
 
 const Wrapper = styled.div`
     display: flex;

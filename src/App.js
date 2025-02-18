@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./LoginPage/LoginPage";
+import LoginPage from "./pages/login/LoginPage";
 import TestPage from "./TestPage/test.page";
 import RegisterPage from "./pages/register/RegisterPage";
-import Header from "./components/HeaderTemp";
-import Footer from "./components/FooterTemp";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import AnalysisPage from "./pages/analysis/AnalysisPage";
 
 // 로그인 페이지는 Header, Footer를 App.js에서 사용
