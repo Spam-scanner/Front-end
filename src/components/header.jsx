@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Logo from "./Logo";
-import { useNavigate } from "react-router-dom";
+import Logo from "./logo";
+import { useNavigate, useLocation } from "react-router-dom"; //useLocation 추가
 
 const Wrapper = styled.div`
     display: flex;
@@ -29,28 +29,30 @@ const LoginButton = styled.div`
 `;
 
 function Header(props) {
-    const { fontSize } = props; // 헤더에 props로 헤더의 로고 크기를 조절(각 페이지마다 전달해주는 값을 다르게)
-    const [isLogin, setIsLogin] = useState(false); // 기본 false로 설정(로그아웃 상태) 
+    const { fontSize } = props; // 헤더 로고 크기 조절
+    const [isLogin, setIsLogin] = useState(false); // 로그인 상태 관리
     const navigate = useNavigate();
+    const location = useLocation(); //  현재 경로 확인=> 로그인 페이지에서는 로그인 버튼 비활성화화
+
+    // 로그인 페이지에서는 버튼 숨김
+    const isLoginPage = location.pathname === "/"; 
+    if (isLoginPage) return <Wrapper><Logo fontSize={fontSize} /></Wrapper>;
 
     const onClick = () => {
         if (isLogin) {
             const ok = window.confirm("정말 로그아웃 하시겠습니까?");
             if (ok) {
-                // 로그아웃 구현하기?
                 setIsLogin(false);
                 navigate("/");
             }
-        }
-        else { // 로그인하지 않았을 경우
-            // 로그인 페이지로 이동
+        } else {
             navigate("/");
         }
-    }
+    };
 
     return (
         <Wrapper>
-            <Logo fontSize={fontSize} />
+            <Logo fontSize={fontSize} />{/*회원가입 페이지에서만 버튼 활성화 */}
             <LoginButton onClick={onClick} $isLogin={isLogin}>
                 {isLogin ? "로그아웃" : "로그인"}
             </LoginButton>
