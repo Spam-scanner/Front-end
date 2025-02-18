@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../components/HeaderTemp';
+import Footer from '../components/FooterTemp';
 
 const Wrapper = styled.div`
     height: 100vh;

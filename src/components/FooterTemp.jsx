@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from "./logo";
+import Logo from "./LogoTemp";
 
 const Wrapper = styled.div`
     box-sizing: border-box;

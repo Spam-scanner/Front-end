@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Logo from "./logo";
+import Logo from "./LogoTemp";
 import { useNavigate, useLocation } from "react-router-dom"; //useLocation 추가
 
 const Wrapper = styled.div`
