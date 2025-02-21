@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"; // ✅ 추가
 import styled from "styled-components";
 import Loading from "./Loading";
 
@@ -77,8 +78,10 @@ const Error = styled.span`
     margin-top: 2px;
 `;
 
-function Analysis(props) {
+function Analysis() {
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate(); // 결과 페이지로 이동하기 위해 추가가
+
     const {
         register,
         handleSubmit,
@@ -88,26 +91,29 @@ function Analysis(props) {
         mode: "onChange"
     });
 
-    // handleSubmit에서 유효성 검사 성공 시
+    //handleSubmit에서 유효성 검사 성공 시 실행
     const onSubmit = async (data) => {
         setIsLoading(true);
         try {
             console.log(data);
-            await new Promise((resolve) => setTimeout(resolve, 5000)); // 5초간 로딩 시간 테스트, 통신할 때 변경하기?
+            await new Promise((resolve) => setTimeout(resolve, 5000)); // 5초 대기 후 추후 교체
 
-            // 제출하면 폼 리셋
+            //결과 페이지로 이동
+            navigate("/result");
+
+            // 제출 후 폼 리셋
             reset();
         } catch (error) {
             console.log(error);
         } finally {
             setIsLoading(false);
         }
-    }
+    };
 
     // handleSubmit에서 유효성 검사 실패 시
     const onInvalid = (errors) => {
         console.log(errors);
-    }
+    };
 
     return (
         <>
@@ -133,7 +139,6 @@ function Analysis(props) {
                 </Wrapper>
             }
         </>
-
     );
 }
 

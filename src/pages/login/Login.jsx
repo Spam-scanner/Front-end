@@ -1,7 +1,6 @@
   import { useForm } from "react-hook-form";
-  import { Link } from "react-router-dom"; 
+  import { Link , useNavigate} from "react-router-dom"; 
   import styled from "styled-components";
-
   const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
@@ -92,7 +91,9 @@
       font-size: 13px;
   `;
 
-  function Login() {
+function Login() {
+    const navigate = useNavigate(); // useNavigate 훅 사용
+
       const {
           register,
           handleSubmit,
@@ -105,6 +106,7 @@
           try {
               console.log("로그인 데이터:", data);
               alert("로그인 성공!");
+              navigate("/analysis");
           } catch (error) {
               console.log(error);
           }
