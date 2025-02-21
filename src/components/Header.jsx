@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 30px 0px;
     width: 100%;
-    gap: 20px;
+    gap: 1rem;
 `;
 
 const LoginButton = styled.div`
@@ -22,7 +22,7 @@ const LoginButton = styled.div`
     cursor: pointer;
 
     // 반응형 스타일 추가
-    @media (min-width: 768px) {
+    @media (min-width: 650px) {
         position: absolute;
         right: 100px;
     }

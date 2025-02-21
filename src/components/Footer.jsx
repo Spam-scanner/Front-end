@@ -6,26 +6,27 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 30px;
+    padding: 72px 110px;
     width: 100%;
     bottom: 0px;
     // 반응형 스타일 추가
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         flex-direction: column; 
         text-align: center;       
         gap: 10px;                
+        padding: 72px 20px;
     }
 `;
 
 const Text = styled.span`
-    font-size: 14px;
+    font-size: 18px;
     color: #9795B5;
 `;
 
 function Footer(props) {
     return (
         <Wrapper>
-            <Logo fontSize="26px" />
+            <Logo fontSize="34px" />
             <Text>Copyright © 2025 SpamScanner | All Rights Reserved </Text>
         </Wrapper>
     );
