@@ -15,7 +15,7 @@ const Main = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 30px 0px;
+    padding: 0.5rem 0px;
 `;
 
 const Img = styled.img`

@@ -17,6 +17,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 105px;
 `;
 
@@ -34,7 +35,7 @@ const Circle = styled.div`
 
     animation: ${pulse} 2s infinite ease-in-out;
 `;
-
+ 
 const Img = styled.img`
     width: ${(props) => props.fontSize ? props.fontSize : "36px"};
 `;
