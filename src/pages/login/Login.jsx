@@ -1,8 +1,7 @@
-import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
+  import { useForm } from "react-hook-form";
+  import { Link , useNavigate} from "react-router-dom"; 
+  import styled from "styled-components";
+  const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -110,24 +109,25 @@ const Error = styled.span`
 `;
 
 function Login() {
-    const navigate = useNavigate();
-    const {
-        register,
-        handleSubmit,
-        formState: { isValid, errors }
-    } = useForm({
-        mode: "onBlur",
-    });
+    const navigate = useNavigate(); // useNavigate 훅 사용
 
-    const onSubmit = (data) => {
-        try {
-            console.log("로그인 데이터:", data);
-            alert("로그인 성공!");
-            navigate("/analysis");
-        } catch (error) {
-            console.log(error);
-        }
-    };
+      const {
+          register,
+          handleSubmit,
+          formState: { isValid, errors }
+      } = useForm({
+          mode: "onBlur",
+      });
+
+      const onSubmit = (data) => {
+          try {
+              console.log("로그인 데이터:", data);
+              alert("로그인 성공!");
+              navigate("/analysis");
+          } catch (error) {
+              console.log(error);
+          }
+      };
 
     return (
         <Wrapper>
