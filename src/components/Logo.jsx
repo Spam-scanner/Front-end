@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
     display: flex;
-    gap: 10px;
+    gap: 0.5rem;
     cursor: pointer;
 `;
 

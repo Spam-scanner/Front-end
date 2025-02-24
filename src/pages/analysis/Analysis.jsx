@@ -33,7 +33,7 @@ const Text = styled.span`
 const TextArea = styled.textarea`
     box-sizing: border-box;
     display: flex;
-    font-size: 14px;
+    font-size: 18px;
     font-family: 'Pretendard-Regular';
     color: #5D5A88;
     background-color: white;
@@ -56,7 +56,7 @@ const InputField = styled.div`
 
 const Input = styled.input`
     padding: 16px 20px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 900;
     background-color: #5D5A88;
     color: white;
@@ -75,7 +75,7 @@ const Error = styled.span`
     color: tomato;
     font-size: 13px;
     position: absolute;
-    margin-top: 2px;
+    margin-top: 4px;
 `;
 
 function Analysis() {
@@ -119,9 +119,9 @@ function Analysis() {
         <>
             {isLoading ? <Loading /> :
                 <Wrapper>
-                    <Text fontSize="35px" color="#5D5A88">스팸 분석기</Text>
+                    <Text fontSize="44px" color="#5D5A88">스팸 분석기</Text>
                     <Form onSubmit={handleSubmit(onSubmit, onInvalid)}>
-                        <Text fontSize="16px" color="#5D5A88">이 메시지도 스팸일까요?</Text>
+                        <Text fontSize="18px" color="#5D5A88">이 메시지도 스팸일까요?</Text>
                         <InputField>
                             <TextArea rows={15} maxLength={1000} placeholder="수신한 텍스트를 입력해주세요."
                                 {...register("inputText", {

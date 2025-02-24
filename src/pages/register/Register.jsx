@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -56,11 +57,20 @@ const Input = styled.input`
         color: white;
         border: 1px solid #5D5A88;
         border-radius: 50px;
-        margin-top: 20px;
+        margin-top: 30px;
         cursor: pointer;
+        
         &:hover {
             opacity: 0.8;
         }
+        &:disabled {
+          background-color: #dadada;
+          border: 1px solid #dadada;
+          cursor: not-allowed;
+          &:hover {
+            opacity: 1;
+          }
+      }
     }
 `;
 
@@ -80,9 +90,30 @@ const Error = styled.span`
     margin-top: 2px;
 `;
 
+const Select = styled.select`
+    font-family: 'Pretendard-Regular';
+    padding: 16px 20px;
+    width: 100%; 
+    height: 51.2px;
+    margin-top: 5px;
+    font-size: 16px;
+    background-color: #F9F9FF;
+    color: #5D5A88;
+    //box-shadow: 0px 3px 5px rgb(179, 177, 205);
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;  // 애니메이션 효과 추가
+
+    &:focus {
+        outline: 0.5px solid hsl(243.75, 32.00000000000001%, 90.19607843137256%);
+        background-color: #f5f5fe;
+    }
+`;
+
 const REQUIRED_MESSAGE = '필수 입력 사항입니다.';
 
 function Register(props) {
+    const navigate = useNavigate();
     // useForm으로 폼 상태 관리함 = useState 불필요
     // 이벤트 핸들링, 유효성 검사 모두 처리해줌 = onChange 불필요
     const {
@@ -99,6 +130,9 @@ function Register(props) {
         // 회원가입 로직 구현
         try {
             console.log(data);
+            navigate("/");
+            alert("회원가입 되었습니다.");
+
         } catch (error) {
             console.log(error);
         }
@@ -149,39 +183,18 @@ function Register(props) {
 
                 <InputField>
                     <Label>생년월일</Label>
-                    <Input placeholder="태어난 연도를 입력해주세요. ex)2001" type="number"
-                        {...register('birthYear', {
-                            required: REQUIRED_MESSAGE,
-                            min: {
-                                value: 1900,
-                                message: "1900년 이후 출생년도만 입력 가능합니다."
-                            },
-                            max: {
-                                value: 2025,
-                                message: "2025년 이전 출생년도만 입력 가능합니다."
-                            }
-                        })}
-                    />
+                    <Select {...register('birthYear', { required: REQUIRED_MESSAGE })}>
+                        <option value="">태어난 연도를 선택해주세요.</option>
+                        {Array.from({ length: 106 }, (_, i) => 1920 + i).map((year, index) => (
+                            <option key={index} value={year}>{year}</option>
+                        ))}
+                    </Select>
                     {errors.birthYear && <Error>{errors.birthYear.message}</Error>}
-                </InputField>
-
-                <InputField>
-                    <Label>이메일</Label>
-                    <Input placeholder="이메일 주소를 입력해주세요." type="email"
-                        {...register('email', {
-                            required: REQUIRED_MESSAGE,
-                            pattern: {
-                                value: /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/g,
-                                message: '올바른 이메일 주소를 입력해주세요.'
-                            }
-                        })}
-                    />
-                    {errors.email && <Error>{errors.email.message}</Error>}
                 </InputField>
 
                 <Input type="submit" value={"회원가입"} disabled={!isValid} />
             </Form>
-        </Wrapper>
+        </Wrapper >
     );
 }
 
